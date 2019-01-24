@@ -16,7 +16,7 @@ async def on_ready():
 async def on_member_join(member):
     await member.add_roles("537626518566862849")
     
-@bot.command
+@bot.command()
 async def test():
     await bot.say('The bot is being programmed and this is a test :)')
 
