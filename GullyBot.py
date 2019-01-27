@@ -22,6 +22,6 @@ async def test(ctx):
     
 @bot.command(pass_context=True)
 async def gully(ctx):
-    await ctx.channel.send(f'{ctx.author.mention}, Gully\'s twitch is: \nhttps://twitch.tv/imgully\nHis twitter is:\nhttps://twitter.com/ImGullyTV\n His YouTube channel is coming soon!')
+    await ctx.channel.send(f'{ctx.author.mention}, Gully\'s twitch is: \nhttps://twitch.tv/imgully\nHis twitter is:\nhttps://twitter.com/ImGullyTV\nHis YouTube channel is coming soon!')
 
 bot.run("NTM3NjI4MDIzNzUxNDQyNDUz.DypeTA.lYbx_vwiFjtQZT754IxkE8WD1BU")
