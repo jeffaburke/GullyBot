@@ -32,12 +32,23 @@ async def clear(ctx, number=100, silent='a'):
     if silent == 'a':
         await ctx.channel.send(f'`{number} messages have been deleted!`')
 
-@bot.command(pass_context=True)
-@commands.has_any_role('Gully', "Moderators")
-async def announce(ctx, say=''):
-    await ctx.send(say)
 @clear.error
 async def clear_error(ctx, error):
+    if isinstance(error, commands.CheckFailure):
+        await ctx.send('`You must be a moderator to do this command!`')
+
+@bot.command(pass_context=True)
+@commands.has_any_role('Gully', "Moderators")
+async def announce(ctx, *args):
+    mgs = [] 
+    async for x in ctx.channel.history(limit = 1):
+        mgs.append(x)
+    await ctx.channel.delete_messages(mgs)
+    say = ' '.join(args)
+    await ctx.send(say)
+    
+@announce.error
+async def announce_error(ctx, error):
     if isinstance(error, commands.CheckFailure):
         await ctx.send('`You must be a moderator to do this command!`')
 
@@ -60,3 +71,5 @@ async def help(ctx):
         await ctx.send(f'{ctx.author.mention}, I couldn\'t send a message to you.')
 
 bot.run("NTM3NjI4MDIzNzUxNDQyNDUz.DypeTA.lYbx_vwiFjtQZT754IxkE8WD1BU")
+
+
