@@ -3,7 +3,7 @@ from discord.ext import commands
 from discord.ext.commands import Bot
 import asyncio
 
-bot = commands.AutoShardedBot(command_prefix='!', activity=discord.Streaming(name='Being programmed :) Gully Fan Bot', url='http://www.twitch.tv/imgully'))
+bot = commands.AutoShardedBot(command_prefix='!gb ', activity=discord.Streaming(name='Being programmed :) Gully Fan Bot', url='http://www.twitch.tv/imgully'))
 bot.remove_command('help')
 
 @bot.event
