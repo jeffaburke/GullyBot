@@ -70,6 +70,6 @@ async def help(ctx):
     except discord.Forbidden:
         await ctx.send(f'{ctx.author.mention}, I couldn\'t send a message to you.')
 
-bot.run("NTM3NjI4MDIzNzUxNDQyNDUz.DypeTA.lYbx_vwiFjtQZT754IxkE8WD1BU")
+bot.run("Key")
 
 
